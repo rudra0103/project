@@ -5,6 +5,8 @@ public class ConstantData {
     public static final String SERVER_ADDRESS="http://192.168.1.13:8000/";
     public static final String SERVER_ADDRESS_IMG=SERVER_ADDRESS+"images/";
     public static final String REGISTER_METHOD=SERVER_ADDRESS+"register_user";
+
+    //public static final String GET_BOOKING_METHOD=SERVER_ADDRESS+"api_getbooking";
     public static final String LOGIN_METHOD=SERVER_ADDRESS+"login_user";
     public static final String DATA_METHOD=SERVER_ADDRESS+"api_data";
 

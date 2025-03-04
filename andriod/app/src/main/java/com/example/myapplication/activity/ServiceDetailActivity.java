@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -31,6 +32,8 @@ public class ServiceDetailActivity extends AppCompatActivity {
     TextView title,Ser_duration,price,ser_cat,id_gender,description,disc,tvDate,tvTime;
     Button btnBook;
     ImageSlider shoesimages;
+
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,13 @@ public class ServiceDetailActivity extends AppCompatActivity {
         description=findViewById(R.id.description);
         disc=findViewById(R.id.disc);
         btnBook=findViewById(R.id.btnBook);
+        back=findViewById(R.id.back);
+
+
+        back.setOnClickListener(v -> {
+            Intent intent = new Intent(this, homeActivity.class);
+            startActivity(intent);
+        });
 
         ServiceModel model= (ServiceModel) getIntent().getSerializableExtra("model");
 

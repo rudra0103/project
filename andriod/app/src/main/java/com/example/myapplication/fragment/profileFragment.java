@@ -12,15 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.activity.AboutusActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.activity.LoginActivity;
-import com.example.myapplication.activity.signup;
 
 public class profileFragment extends Fragment {
     Button btnLogout;
     View view;
+
+    TextView txttemrsandcondi,txtadboutus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,7 +39,7 @@ public class profileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         btnLogout=view.findViewById(R.id.btnLogout);
-
+        txtadboutus=view.findViewById(R.id.txtadboutus);
         btnLogout.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("LOGOUT !");
@@ -51,6 +54,11 @@ public class profileFragment extends Fragment {
             builder.create()
                     .show();
 
+        });
+
+        txtadboutus.setOnClickListener(v -> {
+            Intent intent=new Intent(getActivity(), AboutusActivity.class);
+            startActivity(intent);
         });
     }
 }

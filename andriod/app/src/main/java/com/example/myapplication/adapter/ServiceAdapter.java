@@ -42,6 +42,10 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
 
         Glide.with(holder.img.getContext()).load(ConstantData.SERVER_ADDRESS_IMG+ service
                 .get(position).getSer_pic1()).into(holder.img);
+        Glide.with(holder.img.getContext()).load(ConstantData.SERVER_ADDRESS_IMG+ service
+                .get(position).getSer_pic2()).into(holder.img);
+        Glide.with(holder.img.getContext()).load(ConstantData.SERVER_ADDRESS_IMG+ service
+                .get(position).getSer_pic3()).into(holder.img);
 
 
         holder.img.setOnClickListener(v -> {
@@ -70,6 +74,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
             txtName=itemView.findViewById(R.id.txtName);
             txtprice=itemView.findViewById(R.id.txtprice);
             txtdes=itemView.findViewById(R.id.txtdes);
+            img=itemView.findViewById(R.id.img);
         }
     }
 }
