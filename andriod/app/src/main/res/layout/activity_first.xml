@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".firstActivity">
+    tools:context=".activity.firstActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="300dp"
@@ -16,10 +16,11 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/fnal"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quidoo"
-        android:textStyle="bold"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        android:textStyle="bold" />
 </LinearLayout>

@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="navigation_view_color_set">#00FF0000</color> <!-- Example Color -->
+
 </resources>

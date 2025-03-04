@@ -41,4 +41,19 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation ("com.airbnb.android:lottie:6.6.2")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation("com.google.code.gson:gson:2.12.1")
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
+    implementation ("com.github.Foysalofficial:NafisBottomNav:5.0")
+
+        
+
+
+
 }

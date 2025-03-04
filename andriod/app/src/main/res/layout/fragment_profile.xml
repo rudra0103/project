@@ -1,14 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profileFragment">
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:background="@color/white"
+    tools:context=".fragment.profileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/man"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textColor="#AA00FF"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="abc_123@Gmail.com"
+            android:textColor="#211243"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnEditprofile"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="Edit profile"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="50dp"
+            android:background="@mipmap/button"
+            android:textColor="#FFFBF6"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#3fff"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/txtadd"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="My Address"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:textColorHint="#FFFBF6"
+            android:padding="10dp"
+            android:drawableRight="@drawable/right_chevron"
+            android:drawableLeft="@drawable/location"
+            android:drawablePadding="10dp"
+            android:background="@mipmap/button"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/txtadboutus"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="About Us"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:drawableRight="@drawable/right_chevron"
+            android:drawableLeft="@drawable/about"
+            android:drawablePadding="10dp"
+            android:layout_marginStart="12dp"
+            android:textColorHint="#FFFBF6"
+            android:background="@mipmap/button"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/txtcontactus"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Contact Us"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:textColorHint="#FFFBF6"
+            android:padding="10dp"
+            android:drawableRight="@drawable/right_chevron"
+            android:drawableLeft="@drawable/contact_page"
+            android:drawablePadding="10dp"
+            android:background="@mipmap/button"
+            android:layout_marginEnd="10dp"/>
+
+
+        <TextView
+            android:id="@+id/txttemrsandcondi"
+            android:layout_marginTop="15dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Terms and Condition"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:textColorHint="#FFFBF6"
+            android:padding="10dp"
+            android:drawableRight="@drawable/right_chevron"
+            android:drawableLeft="@drawable/terms_and_conditions_r"
+            android:drawablePadding="10dp"
+            android:background="@mipmap/button"
+            android:layout_marginEnd="10dp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#3fff"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="#FFFBF6" />
+
+
+
+</LinearLayout>

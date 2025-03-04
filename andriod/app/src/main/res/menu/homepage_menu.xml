@@ -3,19 +3,21 @@
     <item
         android:id="@+id/menu_home"
         android:title="Home"
-        android:icon="@mipmap/home"/>
+        android:icon="@mipmap/home"
+
+        />
     <item
         android:id="@+id/menu_search"
-        android:title="booking"
-        android:icon="@mipmap/booking"/>
+        android:title="Coupon"
+        android:icon="@mipmap/coupon"/>
 
     <item
         android:id="@+id/menu_cart"
-        android:title="discount"
-        android:icon="@mipmap/discount"/>
+        android:title="Booking"
+        android:icon="@mipmap/fbook"/>
 
     <item
         android:id="@+id/menu_profile"
         android:title="Profile"
-        android:icon="@mipmap/profile"/>
+        android:icon="@mipmap/user"/>
 </menu>
