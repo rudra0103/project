@@ -35,17 +35,14 @@ public class LoginActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         btnLogin=findViewById(R.id.btnLogin);
         tvRegister=findViewById(R.id.tvRegister);
         etEmail=findViewById(R.id.etEmail);
         etPassword=findViewById(R.id.etPassword);
-
         tvRegister.setOnClickListener(v -> {
             Intent intent = new Intent(this, signup.class);
             startActivity(intent);
         });
-
         btnLogin.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();

@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#0091EA"
                 android:text="Singup"/>
-            <Button
+            <!--<Button
                 android:id="@+id/btnwotp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                 android:text="Without otp">
 
             </Button>
-
+-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

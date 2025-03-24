@@ -116,7 +116,7 @@ public class Login_Register_Api {
                         ed.putString(ConstantData.KEY_EMAIL,p.getPerson().getEmail());
                         ed.putString(ConstantData.KEY_USER_ID,p.getPerson().get_id());
                         ed.putBoolean(ConstantData.KEY_SP_ISLOGIN,true);
-                        ed.apply();
+                        ed.commit();
 
                         Intent intent=new Intent(context, homeActivity.class);
                         context.startActivity(intent);

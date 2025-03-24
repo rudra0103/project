@@ -16,19 +16,20 @@ public class ServiceModel implements Serializable {
     public String Ser_pic3;
 
     public String Ser_video;
+    public String id;
 
-    public ServiceModel(String title, String description, String price,String duration, String ser_cat, String ser_pic1, String ser_pic2, String ser_pic3, String ser_video) {
+    public ServiceModel(String title, String description, String price, String ser_duration, String ser_cat, String ser_pic1, String ser_pic2, String ser_pic3, String ser_video, String id) {
         this.title = title;
         this.description = description;
         this.price = price;
-        this.Ser_cat = ser_cat;
-        this.Ser_duration = duration;
-        this.Ser_pic1 = ser_pic1;
-        this.Ser_pic2 = ser_pic2;
-        this.Ser_pic3 = ser_pic3;
-        this.Ser_video = ser_video;
+        Ser_duration = ser_duration;
+        Ser_cat = ser_cat;
+        Ser_pic1 = ser_pic1;
+        Ser_pic2 = ser_pic2;
+        Ser_pic3 = ser_pic3;
+        Ser_video = ser_video;
+        this.id = id;
     }
-
 
     public String getTitle() {
         return title;
@@ -48,6 +49,30 @@ public class ServiceModel implements Serializable {
 
     public String getDuration() {
         return Ser_duration;
+    }
+
+    public String getSer_duration() {
+        return Ser_duration;
+    }
+
+    public void setSer_duration(String ser_duration) {
+        Ser_duration = ser_duration;
+    }
+
+    public String getSer_video() {
+        return Ser_video;
+    }
+
+    public void setSer_video(String ser_video) {
+        Ser_video = ser_video;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setDuration(String description) {
@@ -94,11 +119,11 @@ public class ServiceModel implements Serializable {
         this.Ser_pic3 = ser_pic3;
     }
 
-    public String getSer_video() {
+  /*  public String getSer_video() {
         return Ser_video;
     }
 
     public void setSer_video(String ser_video) {
         this.Ser_video = ser_video;
-    }
+    }*/
 }

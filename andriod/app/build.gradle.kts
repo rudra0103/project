@@ -51,8 +51,11 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
     implementation ("com.github.Foysalofficial:NafisBottomNav:5.0")
+        implementation("com.razorpay:checkout:1.6.37")
 
-        
+
+
+
 
 
 

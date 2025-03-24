@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class PersonModel implements Serializable {
 
-    public PersonModel(String _id, String username, String email, String mobileno, String password, String status, String updated_at, String created_at) {
-        this._id = _id;
+    public PersonModel(String id, String username, String email, String mobileno, String password, String status, String updated_at, String created_at) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.mobileno = mobileno;
@@ -16,11 +16,11 @@ public class PersonModel implements Serializable {
     }
 
     public String get_id() {
-        return _id;
+        return id;
     }
 
     public void set_id(String _id) {
-        this._id = _id;
+        this.id = _id;
     }
 
     public String getUsername() {
@@ -79,5 +79,5 @@ public class PersonModel implements Serializable {
         this.created_at = created_at;
     }
 
-    String _id,username,email,mobileno,password,status,updated_at,created_at;
+    String id,username,email,mobileno,password,status,updated_at,created_at;
 }

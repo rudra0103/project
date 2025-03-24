@@ -65,12 +65,12 @@ public class signup extends AppCompatActivity {
         editEmail=findViewById(R.id.editEmail);
         editPwd=findViewById(R.id.editPwd);
         editUname=findViewById(R.id.editUname);
-        btnwotp =findViewById(R.id.btnwotp);
+        /*btnwotp =findViewById(R.id.btnwotp);
         btnwotp.setOnClickListener(v -> {
                   Intent intent = new Intent(this, homeActivity.class);
                 startActivity(intent);
                });
-
+*/
 
             tvLogin.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class);

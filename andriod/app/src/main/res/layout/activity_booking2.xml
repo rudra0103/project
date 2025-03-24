@@ -229,7 +229,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
-            android:text="Add To Cart"
+            android:text="Proced Book"
             android:textColor="@color/white"/>
     </LinearLayout>
 

@@ -21,7 +21,15 @@
         android:layout_height="wrap_content"
         android:text="booking confirmed"
         android:textSize="25dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
+    <Button
+        android:id="@+id/btnhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF" />
 
 
 </LinearLayout>

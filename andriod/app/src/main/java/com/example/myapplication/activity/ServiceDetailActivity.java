@@ -9,6 +9,7 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
     TextView title,Ser_duration,price,ser_cat,id_gender,description,disc,tvDate,tvTime;
     Button btnBook;
     ImageSlider shoesimages;
+    String formattedDate="",formattedTime="";
 
     ImageView back;
     @Override
@@ -75,11 +77,20 @@ public class ServiceDetailActivity extends AppCompatActivity {
 //        disc.setText(model.get());
 
         btnBook.setOnClickListener(v -> {
+
+            if (formattedDate.trim().length() == 0) {
+                Toast.makeText(this, "Please select date", Toast.LENGTH_SHORT).show();
+            }else if (formattedTime.trim().length() == 0) {
+                Toast.makeText(this, "Please select time", Toast.LENGTH_SHORT).show();
+
+            }else{
+
             Intent intent = new Intent(this, BookingActivity.class);
             intent.putExtra("model", model);
             intent.putExtra("date", tvDate.getText().toString());
             intent.putExtra("time", tvTime.getText().toString());
             startActivity(intent);
+            }
 
         });
 
@@ -120,7 +131,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
                         Calendar selectedDate = Calendar.getInstance();
                         selectedDate.set(year, monthOfYear, dayOfMonth);
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                        String formattedDate = dateFormat.format(selectedDate.getTime());
+                        formattedDate = dateFormat.format(selectedDate.getTime());
                         tvDate.setText(formattedDate);
                     }
                 },
@@ -146,7 +157,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
                         selectedTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         selectedTime.set(Calendar.MINUTE, minute);
                         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-                        String formattedTime = timeFormat.format(selectedTime.getTime());
+                        formattedTime = timeFormat.format(selectedTime.getTime());
                         tvTime.setText(formattedTime);
                     }
                 },
