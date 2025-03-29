@@ -111,7 +111,7 @@
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#0091EA"
+                android:backgroundTint="@color/primary_color"
                 android:text="Login" />
 
             <LinearLayout

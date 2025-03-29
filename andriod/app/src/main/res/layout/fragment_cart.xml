@@ -7,13 +7,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#E1F1F8"
     android:gravity="center"
     tools:context=".activity.firstActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rcyl"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="300dp"
         android:layout_height="300dp"
         app:lottie_autoPlay="true"
+        android:visibility="gone"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/bookingcencel"/>
 

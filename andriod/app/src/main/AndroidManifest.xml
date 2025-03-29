@@ -16,7 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.TermsConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ContactUsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ServiceActivity"
             android:exported="false" />
         <activity
             android:name=".activity.AboutusActivity"

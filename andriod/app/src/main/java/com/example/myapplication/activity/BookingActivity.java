@@ -1,11 +1,13 @@
 package com.example.myapplication.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -21,6 +23,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.api.BookingApi;
+import com.example.myapplication.api.CouponApi;
+import com.example.myapplication.fragment.couponFragment;
+import com.example.myapplication.model.CouponModel;
+import com.example.myapplication.model.CouponOutputModel;
 import com.example.myapplication.model.ServiceModel;
 import com.example.myapplication.util.ConstantData;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -38,16 +44,23 @@ public class BookingActivity extends AppCompatActivity implements PaymentResultL
     RadioGroup rdbPayment;
     String c_o="cash";
     String uid="0";
+    double tot=0,c_discount=0;
+
 
 
     String address="";
     TextView tvChangeAddress,tvaddress,tvitem_total,tvtotal;
 
     Button btnSaveAddress,btnCheckout;
-    ImageView img;
+    ImageView img,backservice;
     TextView txtName, txtDate, txtTime,txtPrice;
     ServiceModel model;
-TextInputEditText etCode;
+    TextView tvCouponOffer;
+    TextView tvcoupon;
+    EditText etCode;
+Button applyoffer;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,18 +75,43 @@ TextInputEditText etCode;
         model = (ServiceModel) getIntent().getSerializableExtra("model");
 
         img = findViewById(R.id.img);
+        tvtotal = findViewById(R.id.tvtotal);
         txtName = findViewById(R.id.txtName);
         etCode = findViewById(R.id.etCode);
+        backservice  = findViewById(R.id.backservice);
+        tvCouponOffer  = findViewById(R.id.tvCouponOffer);
+        tvcoupon =findViewById(R.id.tvcoupon);
         txtDate = findViewById(R.id.txtDate);
         txtTime = findViewById(R.id.txTime);
         txtPrice = findViewById(R.id.txtPrice);
+        applyoffer = findViewById(R.id.applyoffer);
         Glide.with(this).load(ConstantData.SERVER_ADDRESS_IMG + model.getSer_pic1()).into(img);
         txtName.setText(model.getTitle());
         txtPrice.setText(model.getPrice());
+
         txtTime.setText(getIntent().getStringExtra("time"));
         txtDate.setText(getIntent().getStringExtra("date"));
+        backservice.setOnClickListener(v -> {
+            Intent intent = new Intent(BookingActivity.this, ServiceDetailActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        tvcoupon.setOnClickListener(v -> {
+            Intent intent = new Intent(BookingActivity.this, couponFragment.class );
+            startActivity(intent);
+            finish();
+        });
 
-        tvtotal = findViewById(R.id.tvtotal);
+        applyoffer.setOnClickListener(v -> {
+            if(etCode.getText().toString().trim().length()==0){
+                Toast.makeText(this, "Please Enter Coupon Code", Toast.LENGTH_SHORT).show();
+            }else {
+                new CouponApi().apply_coupon(BookingActivity.this,etCode.getText().toString());
+
+            }
+        });
+
+
         btnCheckout = findViewById(R.id.btnCheckout);
         rbtnCOD = findViewById(R.id.rbtnCOD);
         rbtnOnline = findViewById(R.id.rbtnOnline);
@@ -133,7 +171,8 @@ TextInputEditText etCode;
             }
             if (address.trim().length() == 0) {
                 Toast.makeText(this, "Please Enter Address", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+            else {
 
                 if (c_o.equals("cash")) {
                     new BookingApi().confirm(BookingActivity.this,uid,model.getId(),address,getIntent().getStringExtra("date"),getIntent().getStringExtra("time"),"0",c_o,"0","0");
@@ -150,10 +189,10 @@ TextInputEditText etCode;
         Checkout checkout = new Checkout();
 
         // set your id as below
-        checkout.setKeyID("rzp_test_Qi8mCCOIlysMtE");
+        checkout.setKeyID("rzp_test_c9cZdrCJ6xB2sK");
 
         // set image
-        checkout.setImage(R.mipmap.ic_launcher);
+        checkout.setImage(R.mipmap.qud2);
 
         // initialize json object
         JSONObject object = new JSONObject();
@@ -197,5 +236,15 @@ TextInputEditText etCode;
     @Override
     public void onPaymentError(int i, String s) {
         Toast.makeText(this, "Payment error", Toast.LENGTH_SHORT).show();
+    }
+
+    String c_code="";
+    public void setcoupon(CouponOutputModel model){
+
+        c_code=model.getCoupon_data().getCou_code();
+        c_discount=Double.parseDouble(model.getCoupon_data().getCou_discount());
+        tot=tot-c_discount;
+        tvtotal.setText(tot+"");
+        tvCouponOffer.setText(c_discount+"");
     }
 }

@@ -3,13 +3,16 @@ package com.example.myapplication.activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +39,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
     String formattedDate="",formattedTime="";
 
     ImageView back;
+    VideoView vi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
         });
 
         title=findViewById(R.id.title);
+        vi=findViewById(R.id.vi);
         shoesimages=findViewById(R.id.shoesimages);
         tvDate=findViewById(R.id.tvDate);
         tvTime=findViewById(R.id.tvTime);
@@ -75,6 +80,18 @@ public class ServiceDetailActivity extends AppCompatActivity {
 //        id_gender.setText(model.ge());
         description.setText(model.getDescription());
 //        disc.setText(model.get());
+
+        String videoUrl = ConstantData.SERVER_ADDRESS_IMG+model.getSer_video();
+        Uri videoUri = Uri.parse(videoUrl);
+
+        // Setup MediaController for play/pause controls
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(vi);
+        //vi.setMediaController(mediaController);
+        // Set video URI
+        vi.setVideoURI(videoUri);
+        vi.setOnClickListener(v -> vi.start());
+        vi.start();
 
         btnBook.setOnClickListener(v -> {
 
@@ -107,9 +124,6 @@ public class ServiceDetailActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(ConstantData.SERVER_ADDRESS_IMG+model.getSer_pic1(), ScaleTypes.FIT));
         slideModels.add(new SlideModel(ConstantData.SERVER_ADDRESS_IMG+model.getSer_pic2(), ScaleTypes.FIT));
         slideModels.add(new SlideModel(ConstantData.SERVER_ADDRESS_IMG+model.getSer_pic3(), ScaleTypes.FIT));
-
-
-
         shoesimages.setImageList(slideModels);
 
     }
@@ -130,7 +144,7 @@ public class ServiceDetailActivity extends AppCompatActivity {
                         // Format the selected date and update the TextView
                         Calendar selectedDate = Calendar.getInstance();
                         selectedDate.set(year, monthOfYear, dayOfMonth);
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                         formattedDate = dateFormat.format(selectedDate.getTime());
                         tvDate.setText(formattedDate);
                     }

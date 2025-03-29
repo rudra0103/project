@@ -28,12 +28,25 @@
                     android:layout_width="206dp"
                     android:layout_height="35dp"
                     android:gravity="top"
-                    android:text="Welcome'user"
+                    android:text="Welcome"
                     android:textColor="#000000"
                     android:textSize="30dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user"
+                    android:layout_width="206dp"
+                    android:layout_height="35dp"
+                    android:text="User"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -41,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@color/white"
+                android:background="#E0E6E6E6"
                 android:drawableRight="@mipmap/searchbutton"
                 android:hint="Cleaning "
                 android:padding="15dp"

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.model.BookingModel;
+import com.example.myapplication.util.ConstantData;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
         holder.name.setText(booking.getName());
         holder.price.setText(String.valueOf(booking.getAmount())); // Assuming 'amount' is the price
 
-        Glide.with(context).load(booking.getPic1()).into(holder.pic);
+        Glide.with(context).load(ConstantData.SERVER_ADDRESS_IMG+booking.getPic1()).into(holder.pic);
 
         // You can add click listeners for any actions, like deleting an item
         holder.delete.setOnClickListener(v -> {

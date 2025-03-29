@@ -17,13 +17,19 @@ import android.widget.Toast;
 
 import com.example.myapplication.activity.AboutusActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.activity.BookingActivity;
+import com.example.myapplication.activity.ContactUsActivity;
 import com.example.myapplication.activity.LoginActivity;
+import com.example.myapplication.activity.PrivacyPolicyActivity;
+import com.example.myapplication.activity.ServiceActivity;
+import com.example.myapplication.activity.ServiceDetailActivity;
+import com.example.myapplication.activity.TermsConditionsActivity;
 
 public class profileFragment extends Fragment {
     Button btnLogout;
     View view;
 
-    TextView txttemrsandcondi,txtadboutus;
+    TextView txtemrsandcondi,txtadboutus,txtcontactus,txtprivatpolicy;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +46,11 @@ public class profileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         btnLogout=view.findViewById(R.id.btnLogout);
         txtadboutus=view.findViewById(R.id.txtadboutus);
+        txtcontactus=view.findViewById(R.id.txtcontactus);
+        txtprivatpolicy=view.findViewById(R.id.txtprivatpolicy);
+        txtemrsandcondi=view.findViewById(R.id.txtemrsandcondi);
+
+
         btnLogout.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("LOGOUT !");
@@ -53,12 +64,24 @@ public class profileFragment extends Fragment {
             }));
             builder.create()
                     .show();
-
         });
-
+        txtcontactus.setOnClickListener(v -> {
+            Intent intent=new Intent(getActivity(), ContactUsActivity.class);
+            startActivity(intent);
+        });
         txtadboutus.setOnClickListener(v -> {
             Intent intent=new Intent(getActivity(), AboutusActivity.class);
             startActivity(intent);
         });
+        txtprivatpolicy.setOnClickListener(v -> {
+            Intent intent=new Intent(getActivity(), PrivacyPolicyActivity.class);
+            startActivity(intent);
+        });
+        txtemrsandcondi.setOnClickListener(v -> {
+            Intent intent=new Intent(getActivity(), TermsConditionsActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 }

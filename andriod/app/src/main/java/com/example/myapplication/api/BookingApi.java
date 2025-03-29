@@ -16,6 +16,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.activity.LoginActivity;
 import com.example.myapplication.activity.ThankyouActivity;
+import com.example.myapplication.fragment.BookingFragment;
 import com.example.myapplication.model.BookingOutputModel;
 import com.example.myapplication.model.PersonOutputModel;
 import com.example.myapplication.util.ConstantData;
@@ -76,6 +77,63 @@ public class BookingApi {
                 map.put("c_o",c_o);
                 map.put("c_discount",c_discount);
                 map.put("c_code",c_code);
+
+                return map;
+            }
+        };
+
+//        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+//                6000,
+//                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+//        );
+
+        requestQueue.add(stringRequest);
+
+    }
+
+
+    public  void get(BookingFragment context,String uid){
+
+        String URL= ConstantData.GETBOOKING;
+
+        ProgressDialog mProgressDialog =new ProgressDialog(context.getContext());
+        mProgressDialog.setTitle("This is TITLE");
+        mProgressDialog.setMessage("This is MESSAGE");
+        mProgressDialog.show();
+
+        RequestQueue requestQueue= Volley.newRequestQueue(context.getContext());
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+//                Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
+                mProgressDialog.dismiss();
+                try {
+                    Gson gson=new Gson();
+                    BookingOutputModel p =gson.fromJson(response, BookingOutputModel.class);
+                    if (p.isStatus()){
+                        ((BookingFragment)context).setbook(p);
+                    }else{
+                        Toast.makeText(context.getContext(), p.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }catch (Exception e){
+                    Toast.makeText(context.getContext(), "ERROR"+e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                mProgressDialog.dismiss();
+
+                Toast.makeText(context.getContext(), "SERVER ERROR"+error, Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map=new HashMap<>();
+                map.put("uid",uid);
 
                 return map;
             }

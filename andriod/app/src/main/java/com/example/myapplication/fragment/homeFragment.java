@@ -81,7 +81,7 @@ public class  homeFragment extends Fragment {
 
         }
         imageSlider.setImageList(imageList);
-        CategoryAdapter adapter=new CategoryAdapter(category);
+        CategoryAdapter adapter=new CategoryAdapter(category,service);
         rcylCat.setAdapter(adapter);
         rcylservice.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         ServiceAdapter serviceAdapter=new ServiceAdapter(service);

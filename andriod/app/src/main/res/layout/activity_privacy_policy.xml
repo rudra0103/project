@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E1F1F8"
-    tools:context=".activity.ContactUsActivity">
+    tools:context=".activity.PrivacyPolicyActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Header Section -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +30,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Contact Us"
+                    android:text="Privacy Policy"
                     android:textColor="@color/black"
                     android:textSize="32sp"
                     android:textStyle="bold"
@@ -46,11 +44,11 @@
                     android:layout_marginTop="16dp"
                     android:src="@mipmap/qud2"
                     android:contentDescription="App logo"/>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Content Cards -->
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +66,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="📍 Head Office:"
+                    android:text="Privacy Policy:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -77,13 +75,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="E 3rd Ln, ITI Colony, K.R Puram,Bangalore	Karnataka 560016"
+                    android:text="Effective Date: 10-04-2025
+                                Welcome to Qudioo Cleaning Application (“Qudioo,” “we,” “our,” or “us”). Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our services."
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:lineSpacingMultiplier="1.2"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
+            <!-- 1Informatioin we collect Cards -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,7 +100,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="📞 Phone:"
+                    android:text=" 1. Information We Collect:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -110,46 +109,28 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="080 2556 2752"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:lineSpacingMultiplier="1.2"
-                    android:layout_marginBottom="8dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="📧 Email:"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="support@qudioo.com"
-                    android:textColor="@color/black"
+                    android:text="A. Personal Information
+Name, email address, phone number
+Billing and payment details
+Address and location for cleaning services
+"                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:lineSpacingMultiplier="1.2"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="🌐 Website:"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
+                    android:text="B. Usage Data Device information (IP address, browser type, OS) App usage and interaction details Log files and cookies"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="www.qudioo.com"
-                    android:textColor="@color/primary_color"
+                    android:text="A. Service Provider Information  Identity verification details Background checks for service professionals"
                     android:textSize="16sp"
                     android:lineSpacingMultiplier="1.2"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <!-- Values Section -->
+        <!--2. How We Use Your Information -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -157,31 +138,63 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp"
             app:cardBackgroundColor="@color/white">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="📲 Follow Us on Social Media:"
+                    android:text=" 2. How We Use Your Information:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="🔹 Facebook: [facebook.com/qudioo]
-                                   🔹 Instagram: [instagram.com/qudioo]
-                                   🔹 Twitter/X: [twitter.com/qudioo]"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:lineSpacingMultiplier="1.6"/>
-            </LinearLayout>
+                    android:text="We use the collected information to:"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✅ Provide and manage cleaning services"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✅ Process payments and transactions securely"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✅ Improve user experience and app performance"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✅ Communicate important updates and offers"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✅ Ensure security and prevent fraud"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
 
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
+        <!--3. Data  -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -189,36 +202,107 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp"
             app:cardBackgroundColor="@color/white">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="💬 Need Immediate Help?"
+                    android:text=" 3. Data Security:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Reach out to our 24/7 customer support through the Qudioo app for instant assistance.
-                                                    We value your feedback and look forward to keeping your spaces clean and fresh!"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
+                    android:text="We implement strong security measures to protect your data, including encryption and access controls. However, no system is 100% secure, so we encourage you to use strong passwords and be cautious when sharing personal information."                    android:textColor="@color/black"
+                    android:textSize="16sp"
                     android:lineSpacingMultiplier="1.2"/>
+
 
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        <!--4 Cookies-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 4. Cookies and Tracking Technologies"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We use cookies and similar technologies to enhance your browsing experience. You can manage cookie settings through your device or browser preferences."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--5. upadte the policy-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. Updates to This Policy"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We may update this Privacy Policy from time to time. Any changes will be communicated through our app or website. Your continued use of Qudioo signifies acceptance of the updated policy."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <!-- CTA Button -->
         <Button
-            android:id="@+id/btnContactus"
+            android:id="@+id/btnprivacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -230,6 +314,7 @@
             android:letterSpacing="0.05"
             android:elevation="4dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
 
     </LinearLayout>
 

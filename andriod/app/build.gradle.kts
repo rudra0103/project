@@ -53,6 +53,28 @@ dependencies {
     implementation ("com.github.Foysalofficial:NafisBottomNav:5.0")
         implementation("com.razorpay:checkout:1.6.37")
 
+    dependencies {
+        implementation("com.google.android.material:material:1.11.0") // Use latest version
+    }
+    dependencies {
+        implementation("com.google.android.material:material:1.11.0") // Check for latest version
+    }
+    dependencies {
+        implementation("com.google.android.material:material:1.9.0")
+    }
+    dependencies {
+        implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    }
+    dependencies {
+        implementation("com.google.android.material:material:1.11.0")
+        // Or use the latest version:
+        // implementation("com.google.android.material:material:<latest-version>")
+    }
+
+
+
+
+
 
 
 

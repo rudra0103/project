@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#E1F1F8"
     tools:context=".activity.otpActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -206,8 +206,8 @@
         android:layout_gravity="center"
         android:padding="16dp"
         android:textSize="20dp"
-        android:textColor="#ffffff"
-        android:backgroundTint="#0091EA"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/material_dynamic_primary40"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp" />
 

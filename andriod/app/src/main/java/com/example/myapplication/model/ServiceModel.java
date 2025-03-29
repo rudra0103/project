@@ -15,10 +15,20 @@ public class ServiceModel implements Serializable {
     public String Ser_pic2;
     public String Ser_pic3;
 
+
     public String Ser_video;
+    public String discount;
     public String id;
 
-    public ServiceModel(String title, String description, String price, String ser_duration, String ser_cat, String ser_pic1, String ser_pic2, String ser_pic3, String ser_video, String id) {
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public ServiceModel(String title, String description, String price, String ser_duration, String ser_cat, String ser_pic1, String ser_pic2, String ser_pic3, String ser_video, String discount, String id) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -28,6 +38,7 @@ public class ServiceModel implements Serializable {
         Ser_pic2 = ser_pic2;
         Ser_pic3 = ser_pic3;
         Ser_video = ser_video;
+        this.discount = discount;
         this.id = id;
     }
 

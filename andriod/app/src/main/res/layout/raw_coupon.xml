@@ -1,73 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="16dp">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <ImageView
+        <!-- Coupon Image with Circular Shape -->
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/cou_pic"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentStart="true"
-            android:src="@mipmap/user"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:scaleType="centerCrop"
-            android:layout_marginEnd="16dp"
+            android:src="@mipmap/user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/material_motion_easing_accelerated"/>
 
+        <!-- Coupon Code -->
         <TextView
             android:id="@+id/cou_code"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/cou_pic"
             android:text="COUPON CODE"
-            android:textColor="@android:color/black"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            app:layout_constraintStart_toEndOf="@id/cou_pic"
+            app:layout_constraintTop_toTopOf="@id/cou_pic"
+            app:layout_constraintEnd_toStartOf="@+id/apply_button"
+            android:layout_marginStart="16dp"/>
 
+        <!-- Discount Amount -->
         <TextView
             android:id="@+id/cou_discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cou_code"
-            android:layout_toEndOf="@id/cou_pic"
             android:text="20% OFF"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@color/primary_color"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/cou_code"
+            app:layout_constraintTop_toBottomOf="@id/cou_code"
             android:layout_marginTop="4dp"/>
 
+        <!-- Maximum Amount -->
         <TextView
             android:id="@+id/cou_maxamt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cou_discount"
-            android:layout_toEndOf="@id/cou_pic"
             android:text="Maximum ₹500"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"/>
+            android:textColor="@color/secondary_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/cou_code"
+            app:layout_constraintTop_toBottomOf="@id/cou_discount"
+            android:layout_marginTop="2dp"/>
 
-        <Button
-            android:id="@+id/apply_button"
+        <!-- Progress Indicator (Optional) -->
+        <TextView
+            android:id="@+id/cou_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:text="APPLY"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:textColor="@android:color/white"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:elevation="4dp"/>
-    </RelativeLayout>
+            android:text="87% claimed"
+            android:textColor="@color/secondary_text"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/cou_code"
+            app:layout_constraintTop_toBottomOf="@id/cou_maxamt"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
 
-</androidx.cardview.widget.CardView>
+        <!-- Apply Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/apply_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="APPLY"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_color"
+            app:icon="@mipmap/coupon"
+            app:iconTint="@color/primary_color"
+            app:iconGravity="textStart"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"/>
+
+        <!-- Limited Time Badge -->
+        <TextView
+            android:id="@+id/cou_expiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expires in 2h"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

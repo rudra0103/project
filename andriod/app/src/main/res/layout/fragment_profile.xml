@@ -1,135 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="10dp"
-    android:background="@color/white"
+    android:fillViewport="true"
+    android:background="#E1F1F8"
     tools:context=".fragment.profileFragment">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/man"/>
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Name"
-            android:textColor="#AA00FF"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:textStyle="bold"/>
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="abc_123@Gmail.com"
-            android:textColor="#211243"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"/>
+                <!-- Profile Header Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginBottom="24dp">
 
-        <Button
-            android:id="@+id/btnEditprofile"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:text="Edit profile"
-            android:textAllCaps="false"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="50dp"
-            android:background="@mipmap/button"
-            android:textColor="#FFFBF6"/>
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="#3fff"
-            android:layout_marginTop="15dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="24dp"
+                            android:gravity="center">
 
-        <TextView
-            android:id="@+id/txtadd"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="My Address"
-            android:textStyle="bold"
-            android:layout_marginStart="12dp"
-            android:textColorHint="#FFFBF6"
-            android:padding="10dp"
-            android:drawableRight="@drawable/right_chevron"
-            android:drawableLeft="@drawable/location"
-            android:drawablePadding="10dp"
-            android:background="@mipmap/button"
-            android:layout_marginEnd="10dp"/>
+                                <!-- Profile Image with Circular Shape -->
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/profileImage"
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:src="@drawable/man"
+                                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle"
+                                    android:scaleType="centerCrop"
+                                    app:strokeColor="@color/material_dynamic_primary90"
+                                    app:strokeWidth="2dp"/>
 
-        <TextView
-            android:id="@+id/txtadboutus"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="About Us"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:drawableRight="@drawable/right_chevron"
-            android:drawableLeft="@drawable/about"
-            android:drawablePadding="10dp"
-            android:layout_marginStart="12dp"
-            android:textColorHint="#FFFBF6"
-            android:background="@mipmap/button"
-            android:layout_marginEnd="10dp"/>
+                                <TextView
+                                    android:id="@+id/tvUserName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="User Name"
+                                    android:textColor="@color/material_dynamic_primary20"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:layout_marginTop="16dp"
+                                    />
 
-        <TextView
-            android:id="@+id/txtcontactus"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="Contact Us"
-            android:textStyle="bold"
-            android:layout_marginStart="12dp"
-            android:textColorHint="#FFFBF6"
-            android:padding="10dp"
-            android:drawableRight="@drawable/right_chevron"
-            android:drawableLeft="@drawable/contact_page"
-            android:drawablePadding="10dp"
-            android:background="@mipmap/button"
-            android:layout_marginEnd="10dp"/>
+                                <TextView
+                                    android:id="@+id/tvEmail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="patelmahek5598@gmail.com"
+                                    android:textColor="@color/material_dynamic_secondary30"
+                                    android:textSize="16sp"
+                                    android:gravity="center"
+                                    android:layout_marginTop="8dp"
+                                    />
+                        </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
+                <!-- Settings Options Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/material_dynamic_primary90"
+                    app:strokeWidth="1dp">
 
-        <TextView
-            android:id="@+id/txttemrsandcondi"
-            android:layout_marginTop="15dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingVertical="8dp">
 
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="Terms and Condition"
-            android:textStyle="bold"
-            android:layout_marginStart="12dp"
-            android:textColorHint="#FFFBF6"
-            android:padding="10dp"
-            android:drawableRight="@drawable/right_chevron"
-            android:drawableLeft="@drawable/terms_and_conditions_r"
-            android:drawablePadding="10dp"
-            android:background="@mipmap/button"
-            android:layout_marginEnd="10dp"/>
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="#3fff"
-            android:layout_marginTop="15dp"/>
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/txtadboutus"
+                                    style="@style/TextButton"
+                                    android:drawableStart="@mipmap/about"
+                                    android:text="About Us"/>
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/material_dynamic_primary95"
+                                    android:layout_marginStart="16dp"/>
 
-            android:text="Logout"
-            android:textAllCaps="false"
-            android:textColor="#FFFBF6" />
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/txtcontactus"
+                                    style="@style/TextButton"
+                                    android:drawableStart="@mipmap/contactpage"
+                                    android:text="Contact Us"/>
 
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/material_dynamic_primary95"
+                                    android:layout_marginStart="16dp"/>
 
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/txtprivatpolicy"
+                                    style="@style/TextButton"
+                                    android:drawableStart="@mipmap/compliant"
+                                    android:text="Privacy Policy"/>
 
-</LinearLayout>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/material_dynamic_primary95"
+                                    android:layout_marginStart="16dp"/>
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/txtemrsandcondi"
+                                    style="@style/TextButton"
+                                    android:drawableStart="@mipmap/termsandconditions"
+                                    android:text="Terms Conditions"/>
+                        </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Logout Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Logout"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:iconTint="@color/white"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/primary_color"
+                    app:strokeColor="@color/material_dynamic_primary20"
+                    app:strokeWidth="1dp"
+                    android:textSize="18sp"
+                    app:rippleColor="@color/material_dynamic_primary30"/>
+        </LinearLayout>
+</ScrollView>

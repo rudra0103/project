@@ -1,11 +1,15 @@
 package com.example.myapplication.adapter;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +43,18 @@ public class CouponAdapter extends RecyclerView.Adapter<CouponAdapter.CouponView
         holder.cou_code.setText(coupon.getCou_code());
         holder.cou_discount.setText(coupon.getCou_discount());
         holder.cou_maxamt.setText(coupon.getCou_maxamt());
+        holder.apply_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+
+                ClipData clip = ClipData.newPlainText("Coupon Code", coupon.getCou_code());
+
+                clipboard.setPrimaryClip(clip);
+
+                Toast.makeText(v.getContext(), "Coupon copied to clipboard", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Assuming you have a method to load image from URL or resource
         // loadImage(holder.couponImage, coupon.g
@@ -53,6 +69,7 @@ public class CouponAdapter extends RecyclerView.Adapter<CouponAdapter.CouponView
 
     public static class CouponViewHolder extends RecyclerView.ViewHolder {
         ImageView cou_pic;
+        Button apply_button;
         TextView  cou_code, cou_discount, cou_maxamt;
 
         public CouponViewHolder(@NonNull View itemView) {
@@ -61,6 +78,7 @@ public class CouponAdapter extends RecyclerView.Adapter<CouponAdapter.CouponView
             cou_code = itemView.findViewById(R.id.cou_code);
             cou_discount = itemView.findViewById(R.id.cou_discount);
             cou_maxamt = itemView.findViewById(R.id.cou_maxamt);
+            apply_button = itemView.findViewById(R.id.apply_button);
         }
     }
 }

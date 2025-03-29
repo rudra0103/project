@@ -1,6 +1,9 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ContactUsActivity extends AppCompatActivity {
+import com.example.myapplication.R;
+import com.example.myapplication.fragment.profileFragment;
 
+public class ContactUsActivity extends AppCompatActivity {
+    Button btnContactus;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +28,11 @@ public class ContactUsActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        btnContactus=findViewById(R.id.btnContactus);
+        btnContactus.setOnClickListener(v -> {
+            Intent intent=new Intent(this, profileFragment.class);
+            finish();
+        });
+
     }
 }

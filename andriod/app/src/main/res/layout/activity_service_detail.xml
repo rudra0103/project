@@ -15,33 +15,29 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:elevation="4dp"
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:id="@+id/back"
-                android:layout_width="27dp"
-                android:layout_height="27dp"
-                android:layout_marginStart="20dp"
-                android:src="@mipmap/leftarrow" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/leftarrow"
 
-                <TextView
-                android:id="@+id/productDetail"
-                android:layout_width="250dp"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="40dp"
-                android:text="Service Details"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="27dp"
-                android:layout_height="27dp"
-                android:src="@mipmap/share"/>
-
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="My Booking Details"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -90,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Service Name:"
                         android:layout_marginLeft="6dp"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -100,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:text="Name:"
                         android:layout_marginLeft="6dp"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
                 </LinearLayout>
                 <LinearLayout
@@ -113,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:text="Service Duration:"
                         android:layout_marginLeft="6dp"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -123,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:text="DURAION:"
                         android:layout_marginLeft="6dp"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -140,7 +136,7 @@
                         android:text="Service Category:"
                         android:layout_marginLeft="6dp"
                         android:textColor="#117CC7"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_margin="5dp"
@@ -150,13 +146,14 @@
                         android:text="Category:"
                         android:layout_marginLeft="6dp"
                         android:textColor="#117CC7"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="horizontal">
                     <TextView
                         android:layout_margin="5dp"
@@ -173,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:text="gender"
                         android:layout_marginLeft="6dp"
-                        android:textSize="25sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -190,14 +187,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Product Price :"
-                            android:textSize="25sp"
+                            android:textSize="20dp"
                             android:textStyle="bold"/>
                         <TextView
                             android:id="@+id/price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text=" ₹ 890"
-                            android:textSize="25sp"
+                            android:text="₹890"
+                            android:textSize="20dp"
                             android:textStyle="bold"/>
                     </LinearLayout>
                     <LinearLayout
@@ -208,14 +205,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=" Date:"
-                            android:textSize="25sp"
+                            android:textSize="20dp"
                             android:textStyle="bold"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Date"
+                            android:text="20-03-2025"
                             android:id="@+id/tvDate"
-                            android:textSize="25sp"
+                            android:textSize="20dp"
                             android:textStyle="bold"/>
                     </LinearLayout>
                     <LinearLayout
@@ -231,9 +228,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Time"
+                            android:text="10:10"
                             android:id="@+id/tvTime"
-                            android:textSize="25sp"
+                            android:textSize="20dp"
                             android:textStyle="bold"/>
                     </LinearLayout>
                     <LinearLayout
@@ -244,7 +241,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FLAT 20% OFF"
-                        android:textSize="25dp"
+                        android:textSize="20dp"
                         android:layout_marginRight="15dp"
                         android:textStyle="bold"
                         android:textColor="#01D10B"/>
@@ -253,7 +250,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="OFF"
-                            android:textSize="25dp"
+                            android:textSize="20dp"
                             android:layout_marginRight="15dp"
                             android:textStyle="bold"
                             android:textColor="#01D10B"/>
@@ -269,6 +266,19 @@
 
 
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp">
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/vi"/>
+        </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -327,7 +337,7 @@
             android:id="@+id/btnBook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/material_dynamic_primary40"
             android:text="Book now"
             android:textColor="@color/white"/>
     </LinearLayout>

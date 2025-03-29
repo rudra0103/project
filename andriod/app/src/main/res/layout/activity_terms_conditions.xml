@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1F1F8"
+    tools:context=".activity.TermsConditionsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Terms And Conditions"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:letterSpacing="0.0"/>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:src="@mipmap/qud2"
+                    android:contentDescription="App logo"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 1 Content Cards -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Acceptance of Terms"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="By using the Qudioo app or website, you agree to be bound by these Terms and Conditions, as well as our Privacy Policy. If you do not agree with any part of these terms, you should not use our services."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- 2Informatioin we collect Cards -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 2. Services Provided"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Qudioo is a platform that connects users with professional cleaning service providers. We facilitate the booking, scheduling, and payment of cleaning services, but we do not directly employ cleaners."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--3. How We Use Your Information -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 3. User Responsibilities"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="When using Qudioo, you agree to:"                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" ✔ Provide accurate and up-to-date personal information."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✔ Use the platform only for lawful purposes."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✔ Treat cleaning professionals with respect and fairness."                   android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✔ Make timely payments for booked services."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--4. Data  -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 4. Booking and Payment"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Users can book cleaning services through the Qudioo app."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Prices are displayed before confirming a booking and may vary based on service type, location, and duration."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Payments are processed securely via third-party payment gateways."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cancellations and refunds are subject to our Cancellation Policy."                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--5 Cookies-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 5. Cancellations and Refunds"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Users may cancel bookings within a specified time frame. Late cancellations may be subject to a fee."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Refunds will be processed based on the Refund Policy, which considers cancellation timing and service completion status."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--6. upadte the policy-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6. Termination of Services"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We reserve the right to terminate or suspend your account if you:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Violate any of these terms."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Engage in fraudulent activities."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Misuse the platform or services."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--7. Change the terms-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7. Changes to Terms"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Qudioo may update these Terms and Conditions periodically. Any changes will be communicated through our platform. Continued use of our services after updates signifies your acceptance of the new terms."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CTA Button -->
+        <Button
+            android:id="@+id/btnterms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/material_dynamic_primary40"
+            android:text="Back to Home"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:paddingVertical="16dp"
+            android:letterSpacing="0.05"
+            android:elevation="4dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -7,12 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".activity.homeActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:id="@+id/toolbar"
-        android:background="#87CEFA"
+        android:background="@color/white"
+        app:titleTextColor="@color/black"
         app:title="Qudioo"/>
 
 
@@ -28,11 +30,11 @@
         android:layout_height="80dp"
         android:id="@+id/bnvHome"
         android:layout_alignParentBottom="true"
-        android:background="#87CEFA"
+        android:background="@color/white"
         app:itemIconTint="@color/black"
-        app:itemTextColor="@color/white"
+        app:itemTextColor="@color/black"
         app:itemIconSize="25dp"
-        app:itemTextAppearanceActiveBoldEnabled="true"
+        app:itemTextAppearanceActiveBoldEnabled="false"
         app:menu="@menu/homepage_menu">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
