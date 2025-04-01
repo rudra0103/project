@@ -70,6 +70,10 @@ dependencies {
         // Or use the latest version:
         // implementation("com.google.android.material:material:<latest-version>")
     }
+    dependencies {
+        implementation("com.google.android.material:material:1.11.0")
+    }
+
 
 
 

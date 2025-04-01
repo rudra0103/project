@@ -5,7 +5,10 @@ import java.io.Serializable;
 public class ServiceModel implements Serializable {
     public String title;
     public String description;
+    public String gender;
     public String price;
+
+
 
     public String Ser_duration;
 
@@ -28,10 +31,11 @@ public class ServiceModel implements Serializable {
         this.discount = discount;
     }
 
-    public ServiceModel(String title, String description, String price, String ser_duration, String ser_cat, String ser_pic1, String ser_pic2, String ser_pic3, String ser_video, String discount, String id) {
+    public ServiceModel(String title, String description, String price, String ser_duration,String gender, String ser_cat, String ser_pic1, String ser_pic2, String ser_pic3, String ser_video, String discount, String id) {
         this.title = title;
         this.description = description;
         this.price = price;
+        this.gender = gender;
         Ser_duration = ser_duration;
         Ser_cat = ser_cat;
         Ser_pic1 = ser_pic1;
@@ -101,6 +105,14 @@ public class ServiceModel implements Serializable {
     public String getSer_cat() {
         return Ser_cat;
     }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 
     public void setSer_cat(String ser_cat) {
         this.Ser_cat = ser_cat;
@@ -129,6 +141,7 @@ public class ServiceModel implements Serializable {
     public void setSer_pic3(String ser_pic3) {
         this.Ser_pic3 = ser_pic3;
     }
+
 
   /*  public String getSer_video() {
         return Ser_video;

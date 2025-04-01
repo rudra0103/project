@@ -97,7 +97,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="₹1200"
+                                android:text="1200"
                                 android:textColor="@color/primaryColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold"/>
@@ -220,7 +220,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="View All Coupon"
-                            android:textSize="15dp"
+                            android:textSize="13sp"
                             android:layout_marginLeft="230dp"
                             android:textColor="#1E88E5"
                             />
@@ -435,12 +435,18 @@
                                 android:text="Item Total"
                                 android:textColor="#666"
                                 android:textSize="14sp"/>
-
                             <TextView
-                                android:id="@+id/tvitem_total"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="₹1200"
+                                android:text="₹"
+                                android:textColor="#666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tvtotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1200"
                                 android:textColor="#666"
                                 android:textSize="14sp"/>
                         </LinearLayout>
@@ -458,12 +464,18 @@
                                 android:text="GST (5%)"
                                 android:textColor="#666"
                                 android:textSize="14sp"/>
-
                             <TextView
-                                android:id="@+id/tvDeliveryCharge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="₹60"
+                                android:text="₹"
+                                android:textColor="#666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tvGst"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="60"
                                 android:textColor="#666"
                                 android:textSize="14sp"/>
                         </LinearLayout>
@@ -481,12 +493,18 @@
                                 android:text="Coupon Discount"
                                 android:textColor="#666"
                                 android:textSize="14sp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="₹"
+                                android:textColor="#666"
+                                android:textSize="14sp"/>
 
                             <TextView
                                 android:id="@+id/tvCouponOffer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="-₹0"
+                                android:text="-0"
                                 android:textColor="@color/primaryColor"
                                 android:textSize="14sp"/>
                         </LinearLayout>
@@ -511,12 +529,18 @@
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold"/>
-
                             <TextView
-                                android:id="@+id/tvtotal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="₹1260"
+                                android:text="₹"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/txtTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1260"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold"/>
@@ -531,9 +555,7 @@
                             style="@style/Widget.Material3.Button"
                             app:backgroundTint="@color/primaryColor"
                             android:textColor="@color/white"
-                            app:cornerRadius="8dp"
-                            app:icon="@mipmap/paymenticon"
-                            app:iconTint="@color/white"/>
+                            app:cornerRadius="8dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>

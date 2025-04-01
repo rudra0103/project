@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -32,9 +33,13 @@ import java.util.Locale;
 public class  homeFragment extends Fragment {
     View view;
     Button btn;
+
+    AutoCompleteTextView etsearch;
     ImageSlider imageSlider;
 
     RecyclerView rcylCat,rcylservice;
+
+
 
     public ArrayList<BannerModel> banner;
 
@@ -61,9 +66,14 @@ public class  homeFragment extends Fragment {
         imageSlider = view.findViewById(R.id.imageslider);
         rcylCat = view.findViewById(R.id.rcylCat);
         rcylservice = view.findViewById(R.id.rcylservice);
+        etsearch = view.findViewById(R.id.etsearch);
         rcylCat.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         setBanner();
+        com.example.myapplication.adapter.SearchAdapter adapter = new com.example.myapplication.adapter.SearchAdapter(getContext(), service);
+        etsearch.setAdapter(adapter);
+        etsearch.setThreshold(1);
+
 
     }
 

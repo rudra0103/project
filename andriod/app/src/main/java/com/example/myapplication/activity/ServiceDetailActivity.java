@@ -77,9 +77,10 @@ public class ServiceDetailActivity extends AppCompatActivity {
         price.setText(model.getPrice());
         Ser_duration.setText(model.getDuration());
         ser_cat.setText(model.getSer_cat());
-//        id_gender.setText(model.ge());
+        id_gender.setText(model.getGender());
+
         description.setText(model.getDescription());
-//        disc.setText(model.get());
+        disc.setText(model.getDiscount());
 
         String videoUrl = ConstantData.SERVER_ADDRESS_IMG+model.getSer_video();
         Uri videoUri = Uri.parse(videoUrl);

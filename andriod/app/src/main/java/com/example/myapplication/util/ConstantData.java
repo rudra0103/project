@@ -2,7 +2,7 @@
 
 public class ConstantData {
     //API
-    public static final String SERVER_ADDRESS="http://192.168.0.100:8000/";
+    public static final String SERVER_ADDRESS="http://192.168.1.5:8000/";
     public static final String SERVER_ADDRESS_IMG=SERVER_ADDRESS+"images/";
     public static final String REGISTER_METHOD=SERVER_ADDRESS+"register_user";
     public static final String BOOKING=SERVER_ADDRESS+"api_addbooking";

@@ -49,11 +49,11 @@ public class BookingActivity extends AppCompatActivity implements PaymentResultL
 
 
     String address="";
-    TextView tvChangeAddress,tvaddress,tvitem_total,tvtotal;
+    TextView tvChangeAddress,tvaddress,tvtotal;
 
     Button btnSaveAddress,btnCheckout;
     ImageView img,backservice;
-    TextView txtName, txtDate, txtTime,txtPrice;
+    TextView txtName, txtDate, txtTime,txtPrice,tvGst,txtTotal;
     ServiceModel model;
     TextView tvCouponOffer;
     TextView tvcoupon;
@@ -73,7 +73,6 @@ Button applyoffer;
 
         });
         model = (ServiceModel) getIntent().getSerializableExtra("model");
-
         img = findViewById(R.id.img);
         tvtotal = findViewById(R.id.tvtotal);
         txtName = findViewById(R.id.txtName);
@@ -85,12 +84,22 @@ Button applyoffer;
         txtTime = findViewById(R.id.txTime);
         txtPrice = findViewById(R.id.txtPrice);
         applyoffer = findViewById(R.id.applyoffer);
-        Glide.with(this).load(ConstantData.SERVER_ADDRESS_IMG + model.getSer_pic1()).into(img);
+        tvGst = findViewById(R.id.tvGst);
+        txtTotal = findViewById(R.id.txtTotal);
+
+        paymentSummary();
+
+
+        Glide.with(this)
+                .load(ConstantData.SERVER_ADDRESS_IMG + model.getSer_pic1())
+                .into(img);
+
         txtName.setText(model.getTitle());
         txtPrice.setText(model.getPrice());
 
         txtTime.setText(getIntent().getStringExtra("time"));
         txtDate.setText(getIntent().getStringExtra("date"));
+
         backservice.setOnClickListener(v -> {
             Intent intent = new Intent(BookingActivity.this, ServiceDetailActivity.class);
             startActivity(intent);
@@ -117,7 +126,6 @@ Button applyoffer;
         rbtnOnline = findViewById(R.id.rbtnOnline);
         tvChangeAddress = findViewById(R.id.tvChangeAddress);
         tvaddress = findViewById(R.id.address);
-        tvitem_total = findViewById(R.id.tvitem_total);
         rdbPayment = findViewById(R.id.rdbPayment);
 
         final BottomSheetDialog bottomSheetTeachersDialog = new BottomSheetDialog(BookingActivity.this);
@@ -210,13 +218,13 @@ Button applyoffer;
             object.put("currency", "INR");
 
             // put amount
-            object.put("amount", tot*100);
+            object.put("amount", Double.parseDouble(txtTotal.getText().toString()) * 100);
 
             // put mobile number
-            object.put("prefill.contact", "9998520104");
+            object.put("prefill.contact", "7859915441");
 
             // put email
-            object.put("prefill.email", "kushkhakhiwala123@gmail.com");
+            object.put("prefill.email", "gandhirudra219@gmail.com");
 
             // open razorpay to checkout activity
             checkout.open(
@@ -243,8 +251,16 @@ Button applyoffer;
 
         c_code=model.getCoupon_data().getCou_code();
         c_discount=Double.parseDouble(model.getCoupon_data().getCou_discount());
-        tot=tot-c_discount;
+
+        paymentSummary();
+    }
+
+    public void paymentSummary() {
+        tot=Integer.parseInt(model.getPrice());
         tvtotal.setText(tot+"");
-        tvCouponOffer.setText(c_discount+"");
+        double gst = Math.round(tot*0.05);
+        tvGst.setText(String.valueOf(gst));
+        double total = Math.round(tot+gst-c_discount);
+        txtTotal.setText(total + "");
     }
 }
