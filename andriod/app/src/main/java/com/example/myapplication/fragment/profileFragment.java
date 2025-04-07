@@ -1,7 +1,9 @@
 package com.example.myapplication.fragment;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,10 +26,13 @@ import com.example.myapplication.activity.PrivacyPolicyActivity;
 import com.example.myapplication.activity.ServiceActivity;
 import com.example.myapplication.activity.ServiceDetailActivity;
 import com.example.myapplication.activity.TermsConditionsActivity;
+import com.example.myapplication.util.ConstantData;
 
 public class profileFragment extends Fragment {
     Button btnLogout;
     View view;
+
+    TextView txtUserName,txtEmail;
 
     TextView txtemrsandcondi,txtadboutus,txtcontactus,txtprivatpolicy;
 
@@ -49,6 +54,16 @@ public class profileFragment extends Fragment {
         txtcontactus=view.findViewById(R.id.txtcontactus);
         txtprivatpolicy=view.findViewById(R.id.txtprivatpolicy);
         txtemrsandcondi=view.findViewById(R.id.txtemrsandcondi);
+        txtUserName=view.findViewById(R.id.tvUserName);
+        txtEmail=view.findViewById(R.id.tvEmail);
+
+        SharedPreferences sp=getActivity().getSharedPreferences(ConstantData.SP_NAME, Context.MODE_PRIVATE);
+
+        String name=sp.getString(ConstantData.KEY_USERNAME,"Guest");
+        String email=sp.getString(ConstantData.KEY_EMAIL,"Guest");
+
+        txtUserName.setText(name);
+        txtEmail.setText(email);
 
 
         btnLogout.setOnClickListener(v -> {

@@ -1,6 +1,9 @@
 package com.example.myapplication.activity;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -53,12 +56,12 @@ public class BookingActivity extends AppCompatActivity implements PaymentResultL
 
     Button btnSaveAddress,btnCheckout;
     ImageView img,backservice;
-    TextView txtName, txtDate, txtTime,txtPrice,tvGst,txtTotal;
+    TextView txtName, txtDate, txtTime,txtPrice,tvGst,txtTotal,phoneNumber;
     ServiceModel model;
     TextView tvCouponOffer;
-    TextView tvcoupon;
+
     EditText etCode;
-Button applyoffer;
+    Button applyoffer;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -79,16 +82,16 @@ Button applyoffer;
         etCode = findViewById(R.id.etCode);
         backservice  = findViewById(R.id.backservice);
         tvCouponOffer  = findViewById(R.id.tvCouponOffer);
-        tvcoupon =findViewById(R.id.tvcoupon);
         txtDate = findViewById(R.id.txtDate);
         txtTime = findViewById(R.id.txTime);
         txtPrice = findViewById(R.id.txtPrice);
         applyoffer = findViewById(R.id.applyoffer);
         tvGst = findViewById(R.id.tvGst);
         txtTotal = findViewById(R.id.txtTotal);
-
+        phoneNumber = findViewById(R.id.phoneNumber);
         paymentSummary();
 
+       
 
         Glide.with(this)
                 .load(ConstantData.SERVER_ADDRESS_IMG + model.getSer_pic1())
@@ -105,11 +108,7 @@ Button applyoffer;
             startActivity(intent);
             finish();
         });
-        tvcoupon.setOnClickListener(v -> {
-            Intent intent = new Intent(BookingActivity.this, couponFragment.class );
-            startActivity(intent);
-            finish();
-        });
+
 
         applyoffer.setOnClickListener(v -> {
             if(etCode.getText().toString().trim().length()==0){
@@ -251,6 +250,7 @@ Button applyoffer;
 
         c_code=model.getCoupon_data().getCou_code();
         c_discount=Double.parseDouble(model.getCoupon_data().getCou_discount());
+        Toast.makeText(this, "Coupon Applyed...", Toast.LENGTH_SHORT).show();
 
         paymentSummary();
     }
@@ -258,6 +258,7 @@ Button applyoffer;
     public void paymentSummary() {
         tot=Integer.parseInt(model.getPrice());
         tvtotal.setText(tot+"");
+        tvCouponOffer.setText(c_discount+"");
         double gst = Math.round(tot*0.05);
         tvGst.setText(String.valueOf(gst));
         double total = Math.round(tot+gst-c_discount);

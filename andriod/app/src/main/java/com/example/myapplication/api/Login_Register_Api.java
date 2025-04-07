@@ -92,8 +92,8 @@ public class Login_Register_Api {
         String URL= ConstantData.LOGIN_METHOD;
 
         ProgressDialog mProgressDialog =new ProgressDialog(context);
-        mProgressDialog.setTitle("This is TITLE");
-        mProgressDialog.setMessage("This is MESSAGE");
+        mProgressDialog.setTitle("Please Wait");
+        mProgressDialog.setMessage("Data Gethering");
         mProgressDialog.show();
 
         RequestQueue requestQueue= Volley.newRequestQueue(context);

@@ -31,8 +31,8 @@ public class BookingApi {
         String URL= ConstantData.BOOKING;
 
         ProgressDialog mProgressDialog =new ProgressDialog(context);
-        mProgressDialog.setTitle("This is TITLE");
-        mProgressDialog.setMessage("This is MESSAGE");
+        mProgressDialog.setTitle("Booking Details");
+        mProgressDialog.setMessage("Showing The Booking Details");
         mProgressDialog.show();
 
         RequestQueue requestQueue= Volley.newRequestQueue(context);
@@ -98,8 +98,8 @@ public class BookingApi {
         String URL= ConstantData.GETBOOKING;
 
         ProgressDialog mProgressDialog =new ProgressDialog(context.getContext());
-        mProgressDialog.setTitle("This is TITLE");
-        mProgressDialog.setMessage("This is MESSAGE");
+        mProgressDialog.setTitle("Booking Details");
+        mProgressDialog.setMessage("Showing The Booking Details");
         mProgressDialog.show();
 
         RequestQueue requestQueue= Volley.newRequestQueue(context.getContext());

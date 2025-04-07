@@ -1,5 +1,7 @@
 package com.example.myapplication.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -33,6 +36,8 @@ import java.util.Locale;
 public class  homeFragment extends Fragment {
     View view;
     Button btn;
+
+    TextView user;
 
     AutoCompleteTextView etsearch;
     ImageSlider imageSlider;
@@ -67,14 +72,17 @@ public class  homeFragment extends Fragment {
         rcylCat = view.findViewById(R.id.rcylCat);
         rcylservice = view.findViewById(R.id.rcylservice);
         etsearch = view.findViewById(R.id.etsearch);
+        user = view.findViewById(R.id.user);
         rcylCat.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
+        SharedPreferences sp=getActivity().getSharedPreferences(ConstantData.SP_NAME, Context.MODE_PRIVATE);
+
+        String name=sp.getString(ConstantData.KEY_USERNAME,"Guest");
+        user.setText(name);
         setBanner();
         com.example.myapplication.adapter.SearchAdapter adapter = new com.example.myapplication.adapter.SearchAdapter(getContext(), service);
         etsearch.setAdapter(adapter);
         etsearch.setThreshold(1);
-
-
     }
 
     public void setBanner(){
